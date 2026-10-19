@@ -44,11 +44,11 @@ def main():
 
     with INPUT_PATH.open("r", encoding="utf-8-sig") as file:
         for line in file:
-            if line[:10].lower() == f"chapter {start_chapter}":
+            if line[:10].lower().rstrip() == f"chapter {start_chapter}":
             #if line[0] == jp_start and jp_end in line:
               get_naskah = True
               
-            if line[:10].lower() == f"chapter {start_chapter + 1}":
+            if line[:10].lower().rstrip() == f"chapter {start_chapter + 1}":
             #if line[0] == jp_start and jp_end in line:
               save_texts_to_file(
                   start_chapter,

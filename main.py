@@ -255,10 +255,10 @@ def main():
 
     with INPUT_PATH.open("r", encoding="utf-8-sig") as file:
         for line in file:
-            if line[:11].lower() == f"chapter {start_chapter}":
+            if line[:11].lower().rstrip() == f"chapter {start_chapter}":
               get_naskah = True
               
-            if line[:11].lower() == f"chapter {start_chapter + 1}":
+            if line[:11].lower().rstrip() == f"chapter {start_chapter + 1}":
               do_translate(
                   start_chapter,
                   chapter_naskah
